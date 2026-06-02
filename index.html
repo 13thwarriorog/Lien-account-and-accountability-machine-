@@ -6,341 +6,168 @@
     <title>Lien Machine — Account and Accountability</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+            background: #0f0f1a;
             color: #e8e8e8;
             line-height: 1.7;
-            max-width: 900px;
+            max-width: 720px;
             margin: 0 auto;
             padding: 60px 24px;
-            min-height: 100vh;
         }
-        
         .accent-bar {
-            height: 6px;
-            width: 80px;
-            background: linear-gradient(90deg, #00d4ff, #ff6b35, #d946ef);
-            border-radius: 3px;
+            height: 4px;
+            width: 60px;
+            background: linear-gradient(90deg, #00d4ff, #ff6b35);
+            border-radius: 2px;
             margin-bottom: 1.5em;
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
         }
-        
         h1 {
             font-weight: 300;
-            font-size: 3.2rem;
+            font-size: 2.6rem;
             margin-bottom: 0.15em;
-            background: linear-gradient(135deg, #00d4ff, #ff6b35);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #fff;
             letter-spacing: -0.03em;
-            text-shadow: 0 0 30px rgba(0, 212, 255, 0.1);
         }
-        
         .tagline {
-            color: #ff6b35;
-            font-size: 1.3rem;
+            color: #00d4ff;
+            font-size: 1.2rem;
             margin-bottom: 0.3em;
             font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
         }
-        
         .subtag {
-            color: #a0a0c0;
-            font-size: 1rem;
+            color: #888;
+            font-size: 0.95rem;
             margin-bottom: 2.5em;
             font-style: italic;
-            font-weight: 300;
         }
-        
         h2 {
-            font-weight: 300;
-            font-size: 1.8rem;
-            margin: 2.5em 0 1em;
-            background: linear-gradient(135deg, #ff6b35, #d946ef);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -0.02em;
-        }
-        
-        h3 {
             font-weight: 400;
-            font-size: 1.2rem;
-            color: #00d4ff;
-            letter-spacing: -0.01em;
-        }
-        
-        p {
-            margin-bottom: 1.2em;
-            color: #c0c0d0;
-            line-height: 1.8;
-        }
-        
-        strong {
-            color: #fff;
-            font-weight: 500;
-        }
-        
-        .card {
-            background: rgba(0, 212, 255, 0.04);
-            border: 1.5px solid rgba(0, 212, 255, 0.15);
-            border-radius: 12px;
-            padding: 28px;
-            margin: 1.5em 0;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            backdrop-filter: blur(10px);
-        }
-        
-        .card:hover {
-            border-color: rgba(217, 70, 239, 0.4);
-            background: rgba(217, 70, 239, 0.06);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0, 212, 255, 0.1);
-        }
-        
-        .card h3 {
-            margin-bottom: 0.8em;
-            color: #00d4ff;
-        }
-        
-        .card.solution h3 {
-            color: #d946ef;
-        }
-        
-        .card p {
-            font-size: 0.98rem;
-            margin: 0;
-            color: #b0b0c8;
-        }
-        
-        .formula {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(217, 70, 239, 0.08) 100%);
-            border: 1.5px solid rgba(0, 212, 255, 0.2);
-            border-radius: 12px;
-            padding: 32px;
-            text-align: center;
-            margin: 2em 0;
-            font-family: 'SF Mono', 'Monaco', monospace;
             font-size: 1.4rem;
-            color: #fff;
-            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.1);
-        }
-        
-        .formula span {
+            margin: 2.5em 0 0.8em;
             color: #ff6b35;
-            font-weight: 600;
         }
-        
-        .heritage {
-            margin: 2em 0;
-            padding: 24px 28px;
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.08) 0%, rgba(217, 70, 239, 0.06) 100%);
-            border-left: 4px solid #ff6b35;
-            border-radius: 0 12px 12px 0;
-            border-right: 1px solid rgba(255, 107, 53, 0.2);
+        p {
+            margin-bottom: 1em;
+            color: #bbb;
         }
-        
-        .heritage p {
-            margin: 0;
-            font-size: 0.98rem;
-            color: #b0b0c8;
-            font-style: italic;
-            line-height: 1.8;
-        }
-        
-        .history-box {
-            margin: 2.5em 0;
-            padding: 32px;
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(217, 70, 239, 0.04) 100%);
-            border: 1.5px solid rgba(0, 212, 255, 0.12);
+        .card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
             border-radius: 12px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .history-box h3 {
-            color: #00d4ff;
-            font-size: 1.3rem;
-            margin-bottom: 1.5em;
-            font-weight: 400;
-        }
-        
-        .history-item {
-            margin-bottom: 1.8em;
-            padding-left: 20px;
-            border-left: 2px solid rgba(0, 212, 255, 0.25);
+            padding: 22px 26px;
+            margin: 1em 0;
             transition: border-color 0.3s;
         }
-        
-        .history-item:hover {
-            border-left-color: rgba(217, 70, 239, 0.6);
+        .card:hover {
+            border-color: rgba(0, 212, 255, 0.2);
         }
-        
+        .card h3 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            margin-bottom: 0.5em;
+            color: #ff6b35;
+        }
+        .card.solution h3 {
+            color: #00d4ff;
+        }
+        .card p {
+            font-size: 0.95rem;
+            margin: 0;
+            color: #aaa;
+        }
+        .formula {
+            background: rgba(0, 212, 255, 0.08);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 10px;
+            padding: 24px;
+            text-align: center;
+            margin: 1.5em 0;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 1.2rem;
+            color: #fff;
+        }
+        .formula span {
+            color: #ff6b35;
+        }
+        .heritage {
+            margin: 2em 0;
+            padding: 20px 24px;
+            background: rgba(255, 107, 53, 0.06);
+            border-left: 3px solid #ff6b35;
+            border-radius: 0 10px 10px 0;
+        }
+        .heritage p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #aaa;
+            font-style: italic;
+        }
+        .history-box {
+            margin: 2em 0;
+            padding: 24px;
+            background: rgba(0, 212, 255, 0.04);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            border-radius: 12px;
+        }
+        .history-box h3 {
+            color: #00d4ff;
+            font-size: 1.1rem;
+            margin-bottom: 1em;
+            font-weight: 400;
+        }
+        .history-item {
+            margin-bottom: 1.2em;
+            padding-left: 16px;
+            border-left: 2px solid rgba(0, 212, 255, 0.2);
+        }
         .history-item:last-child {
             margin-bottom: 0;
         }
-        
         .history-item .year {
             color: #00d4ff;
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .history-item p {
-            margin: 0.5em 0 0;
-            font-size: 0.96rem;
-            color: #a8a8c0;
-            line-height: 1.7;
-        }
-        
-        .section-divider {
-            margin: 3em 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.2), transparent);
-        }
-        
-        .domains-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5em;
-            margin: 2em 0;
-        }
-        
-        .solution-box {
-            background: linear-gradient(135deg, rgba(217, 70, 239, 0.08) 0%, rgba(0, 212, 255, 0.04) 100%);
-            border: 1.5px solid rgba(217, 70, 239, 0.25);
-            border-radius: 12px;
-            padding: 28px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            backdrop-filter: blur(10px);
-        }
-        
-        .solution-box:hover {
-            border-color: rgba(217, 70, 239, 0.5);
-            background: linear-gradient(135deg, rgba(217, 70, 239, 0.12) 0%, rgba(0, 212, 255, 0.08) 100%);
-            transform: translateY(-6px);
-            box-shadow: 0 16px 40px rgba(217, 70, 239, 0.15);
-        }
-        
-        .solution-box h3 {
-            color: #d946ef;
-            margin-bottom: 0.8em;
-            font-size: 1.15rem;
-        }
-        
-        .solution-box p {
-            font-size: 0.96rem;
-            color: #b0b0c8;
-            margin: 0;
-        }
-        
-        .partnership-section {
-            margin: 3em 0;
-            padding: 32px;
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.06) 0%, rgba(255, 107, 53, 0.05) 100%);
-            border: 1.5px solid rgba(0, 212, 255, 0.15);
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .partnership-section h2 {
-            margin-top: 0;
-        }
-        
-        .settlement-framework {
-            margin: 2em 0;
-            padding: 28px;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-        }
-        
-        .settlement-framework h4 {
-            color: #00d4ff;
-            font-size: 1.05rem;
-            margin-bottom: 1em;
             font-weight: 500;
+            font-size: 0.9rem;
         }
-        
-        .settlement-item {
-            margin-bottom: 1em;
-            padding-left: 20px;
-            border-left: 2px solid rgba(0, 212, 255, 0.2);
-            color: #b0b0c8;
-            font-size: 0.95rem;
+        .history-item p {
+            margin: 0.3em 0 0;
+            font-size: 0.9rem;
+            color: #999;
         }
-        
-        .settlement-item:last-child {
-            margin-bottom: 0;
-        }
-        
         .github {
-            margin: 3em 0;
-            padding: 32px;
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.06) 0%, rgba(217, 70, 239, 0.05) 100%);
-            border: 1.5px solid rgba(0, 212, 255, 0.15);
+            margin: 2em 0;
+            padding: 24px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
             border-radius: 12px;
             text-align: center;
-            backdrop-filter: blur(10px);
         }
-        
         .github a {
-            display: inline-block;
-            color: #fff;
-            background: linear-gradient(135deg, #00d4ff, #d946ef);
+            color: #00d4ff;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            padding: 14px 32px;
-            border-radius: 8px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 8px 24px rgba(0, 212, 255, 0.2);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            font-weight: 500;
+            font-size: 1.05rem;
         }
-        
-        .github a:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 32px rgba(217, 70, 239, 0.3);
-        }
-        
+        .github a:hover { text-decoration: underline; }
         .license-note {
             margin: 2em 0;
-            padding: 24px 28px;
+            padding: 18px 22px;
             background: rgba(0, 212, 255, 0.04);
             border: 1px solid rgba(0, 212, 255, 0.1);
             border-radius: 10px;
         }
-        
         .license-note p {
             margin: 0;
-            font-size: 0.92rem;
-            color: #a0a0b8;
+            font-size: 0.9rem;
+            color: #999;
         }
-        
         footer {
-            margin-top: 5em;
-            padding-top: 2.5em;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            font-size: 0.85rem;
+            margin-top: 4em;
+            padding-top: 2em;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            font-size: 0.8rem;
             color: #666;
             text-align: center;
-        }
-        
-        footer p {
-            margin: 0.5em 0;
-        }
-        
-        @media (max-width: 768px) {
-            h1 { font-size: 2.4rem; }
-            h2 { font-size: 1.5rem; }
-            .domains-grid { grid-template-columns: 1fr; }
-            body { padding: 40px 16px; }
         }
     </style>
 </head>
@@ -362,8 +189,6 @@
     <div class="heritage">
         <p>This architecture was first conceived in 2000, developed through provisional and utility filings from 2001–2005, and refined through continuous cryptographic practice over two decades. The present implementation represents the matured form of a long-standing accountability framework.</p>
     </div>
-
-    <div class="section-divider"></div>
 
     <h2>Historical Verification</h2>
     <p>Liens have built empires. The lien structure — a claim on future value backed by collateral — is the hidden architecture beneath every major financial system.</p>
@@ -394,123 +219,30 @@
 
     <p>The pattern is consistent: empires do not build with cash on hand. They build with <strong>liens on future value</strong> — collateralized promises, perpetual bonds, sovereign debt as claim on generations yet unborn. The Lien Machine applies this same structural power not to extraction, but to <strong>accountability</strong>.</p>
 
-    <div class="section-divider"></div>
+    <h2>Domains</h2>
 
-    <h2>Problem Domains</h2>
-
-    <div class="domains-grid">
-        <div class="card">
-            <h3>Blockchain & Finance</h3>
-            <p>Tokenized stocks sold without underlying assets. Smart contracts that appear identical at the bytecode level but diverge at settlement. Wallets forced to accept unrevocable obligations. Exchanges displaying balances they cannot liquidate.</p>
-        </div>
-
-        <div class="card">
-            <h3>Pharmaceutical & Biological</h3>
-            <p>Products with undisclosed attributes — gene therapies, biological agents, mandated interventions — where the nominal insert omits material mechanisms. Informed consent is impossible when documentation hides realized effects.</p>
-        </div>
-
-        <div class="card">
-            <h3>Regulatory & Governance</h3>
-            <p>Approvals, certifications, and obligations issued without verified realized backing. Regulatory entities that nominalize safety or capacity without forensic settlement. Voting processes where authentication is nominal but integrity is unrealized.</p>
-        </div>
-
-        <div class="card">
-            <h3>Commercial & Contractual</h3>
-            <p>Any conveyance — physical or digital — where material attributes are withheld. The product appears one way, functions another. The contract reads one way, settles another.</p>
-        </div>
-
-        <div class="card">
-            <h3>Legal & Settlement</h3>
-            <p>Jurisdictional claims without enforcement capacity. Judgments unexecutable against nominally-owned assets. Contracts where the counterparty lacks actual authority to convey. Settlement failure masked by nominal agreement.</p>
-        </div>
-
-        <div class="card">
-            <h3>Data & Provenance</h3>
-            <p>Records claiming verified origins without cryptographic proof. Datasets declaring completeness that are demonstrably partial. AI training sets nominalized as representative when underlying composition is unrealized.</p>
-        </div>
+    <div class="card">
+        <h3>Blockchain & Finance</h3>
+        <p>Tokenized stocks sold without underlying assets. Smart contracts that appear identical at the bytecode level but diverge at settlement. Wallets forced to accept unrevocable obligations. Exchanges displaying balances they cannot liquidate.</p>
     </div>
 
-    <div class="section-divider"></div>
-
-    <h2>The Solution: Hashed Lien Assets</h2>
-
-    <p>Where discrepancy exists, the Lien Machine creates a negotiable instrument of accountability:</p>
-
-    <div class="settlement-framework">
-        <h4>Settlement Framework</h4>
-        <div class="settlement-item"><strong>Detection:</strong> Continuous forensic monitoring identifies divergence between nominal claim and realized capacity.</div>
-        <div class="settlement-item"><strong>Documentation:</strong> The discrepancy is cryptographically hashed, timestamped, and anchored to immutable ledger.</div>
-        <div class="settlement-item"><strong>Asset Creation:</strong> A Hashed Lien Asset is generated — a bearer instrument representing the specific discrepancy with proof of its existence and magnitude.</div>
-        <div class="settlement-item"><strong>Negotiability:</strong> The asset becomes tradeable, assignable, and can be settled against future value realization.</div>
-        <div class="settlement-item"><strong>Resolution:</strong> Settlement occurs when realized value closes the gap or when new nominal commitments honor the lien.</div>
+    <div class="card">
+        <h3>Pharmaceutical & Biological</h3>
+        <p>Products with undisclosed attributes — gene therapies, biological agents, mandated interventions — where the nominal insert omits material mechanisms. Informed consent is impossible when the blank insert hides the realized effect.</p>
     </div>
 
-    <div class="partnership-section">
-        <h2>Scalable Partnership Strategies</h2>
-        
-        <p>The Lien Machine operates through distributed, modular partnerships designed for rapid deployment and institutional integration:</p>
-
-        <div class="domains-grid">
-            <div class="solution-box">
-                <h3>Institutional Integration</h3>
-                <p>Direct integration with existing ledger systems, regulatory frameworks, and settlement infrastructure. Minimal disruption to current workflows. Compliance-by-design for jurisdictional requirements.</p>
-            </div>
-
-            <div class="solution-box">
-                <h3>Forensic Verification Layer</h3>
-                <p>Third-party auditors and validators use standardized protocols to measure nominal-vs-realized divergence. Independent verification builds trust and accelerates adoption across sectors.</p>
-            </div>
-
-            <div class="solution-box">
-                <h3>Distributed Settlement</h3>
-                <p>Multi-jurisdictional settlement nodes ensure no single point of control. Liens remain negotiable across borders while maintaining legal enforceability in originating jurisdiction.</p>
-            </div>
-
-            <div class="solution-box">
-                <h3>Industry-Specific Modules</h3>
-                <p>Pre-configured Lien Machines for pharma, finance, energy, and governance. Each module includes domain-specific forensics, settlement logic, and regulatory compliance templates.</p>
-            </div>
-
-            <div class="solution-box">
-                <h3>Tokenized Instruments</h3>
-                <p>Hashed Lien Assets can exist as blockchain-native tokens, traditional securities, or hybrid instruments. Compatible with existing exchanges and custody infrastructure.</p>
-            </div>
-
-            <div class="solution-box">
-                <h3>Legal Framework Partnerships</h3>
-                <p>Collaboration with law firms, regulatory bodies, and arbitration services to establish enforceable recognition of Hashed Liens within existing legal frameworks.</p>
-            </div>
-        </div>
-
-        <p style="margin-top: 2em;"><strong>Key Advantage:</strong> Partnerships scale horizontally. Each sector adoption strengthens the network. As more systems generate Hashed Liens, the negotiable liquidity and institutional credibility of these instruments grows exponentially.</p>
+    <div class="card">
+        <h3>Regulatory & Governance</h3>
+        <p>Approvals, certifications, and obligations issued without verified realized backing. Regulatory entities that nominalize safety or capacity without forensic settlement. Democratic processes where authentication is nominal but integrity is unrealized.</p>
     </div>
 
-    <div class="section-divider"></div>
-
-    <h2>Design & Implementation</h2>
-    
-    <p>This webpage represents the complete, publishable Lien Machine documentation — featuring:</p>
-
-    <div class="settlement-framework" style="margin-top: 1.5em;">
-        <h4>Visual Language</h4>
-        <div class="settlement-item"><strong>Gradient System:</strong> Cyan (#00d4ff), Orange (#ff6b35), and Magenta (#d946ef) create dynamic visual hierarchy — nominal (blue), realized (orange), and execution (magenta).</div>
-        <div class="settlement-item"><strong>Typography:</strong> Light weights convey precision and authority. All-caps labels emphasize structural elements.</div>
-        <div class="settlement-item"><strong>Interactivity:</strong> Hover effects reveal dimensional depth. Cards respond to engagement, inviting exploration.</div>
-        <div class="settlement-item"><strong>Responsiveness:</strong> Mobile-first design ensures accessibility from any device. Scales elegantly across breakpoints.</div>
-    </div>
-
-    <div class="github">
-        <p style="margin-bottom: 1.5em;">Ready to explore or deploy?</p>
-        <a href="https://github.com/13thwarriorog/Lien-account-and-accountability-machine-" target="_blank">View on GitHub</a>
-    </div>
-
-    <div class="license-note">
-        <p>Lien Machine © 2000-2026. Provisional patents 2001-2005. Open architecture for institutional integration. All discrepancies documented. All liens negotiable.</p>
+    <div class="card">
+        <h3>Commercial & Contractual</h3>
+        <p>Any conveyance — physical or digital — where material attributes are withheld. The product appears one way, functions another. The contract reads one way, performs another.</p>
     </div>
 
     <footer>
-        <p><strong>Lien Machine</strong> — Where nominal meets realized. Where discrepancy becomes asset.</p>
-        <p>Built with precision. Deployed with accountability.</p>
+        <p>Lien Machine © 2024. Accountability through cryptographic record.</p>
     </footer>
 </body>
 </html>
